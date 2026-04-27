@@ -16,7 +16,11 @@ app.add_middleware(
 
 MULTIPLIER = 14
 
-# 🔥 streaming generator (like your execute_attack loop)
+@app.get("/")
+def home():
+    return {"status": "KENLY DEV API ONLINE"}
+
+# streaming generator
 async def generate_logs(target, batches, delay):
     total_ops = batches * MULTIPLIER
 
