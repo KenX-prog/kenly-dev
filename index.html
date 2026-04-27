@@ -283,15 +283,15 @@ async function run() {
   const total = 14;
   let count = 0;
 
-  const res = await fetch("http://127.0.0.1:8000/run", {
-    method: "POST",
-    headers: {"Content-Type": "application/json"},
-    body: JSON.stringify({
-      target: input.value,
-      batches: 1,
-      delay: 1
-    })
-  });
+const res = await fetch("https://kenly-dev.onrender.com/run", {
+  method: "POST",
+  headers: {"Content-Type": "application/json"},
+  body: JSON.stringify({
+    target: input.value,
+    batches: 1,
+    delay: 1
+  })
+});
 
   const reader = res.body.getReader();
   const decoder = new TextDecoder();
